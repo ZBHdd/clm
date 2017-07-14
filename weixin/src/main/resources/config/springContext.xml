@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xmlns:tx="http://www.springframework.org/schema/tx"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+                     http://www.springframework.org/schema/beans/spring-beans.xsd
+                     http://www.springframework.org/schema/tx
+                     http://www.springframework.org/schema/tx/spring-tx.xsd
+                     http://www.springframework.org/schema/aop
+                     http://www.springframework.org/schema/aop/spring-aop.xsd
+                     http://www.springframework.org/schema/context
+                     http://www.springframework.org/schema/context/spring-context-4.0.xsd "> 
+     <context:property-placeholder/>                      
+	 <context:annotation-config/>
+	 <aop:aspectj-autoproxy/>
+	 <bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource"  destroy-method="close">
+	        <property name="driverClassName" value="${driver:org.postgresql.Driver}"/>
+	        <property name="url" value="${url}"/>
+	        <property name="username" value="${user}"/>
+	        <property name="password" value="${password}"/>
+	 </bean>
+
+	 <bean id="txManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">  
+	        <property name="dataSource" ref="dataSource" />  
+	        <property name="sessionFactory" ref="sessionFactory"/>
+	 </bean>  
+	   
+	 <tx:advice id="txAdvice" transaction-manager="txManager">
+	     <tx:attributes>
+	         <tx:method name="find*" read-only="true" propagation="REQUIRED"/>
+	         <tx:method name="count*" read-only="true" propagation="REQUIRED"/>         
+	         <tx:method name="set*" propagation="NEVER"/>       
+	         <tx:method name="*Index" read-only="true" propagation="REQUIRED"/>
+	         <tx:method name="*" propagation="REQUIRED" rollback-for="Exception" />
+	     </tx:attributes>
+	 </tx:advice>
+	
+	 <aop:config>
+	     <aop:pointcut id="allManagerMethod" expression="bean(dao) and execution(* *(..))" />
+	     <aop:advisor advice-ref="txAdvice" pointcut-ref="allManagerMethod" />
+	 </aop:config>	
+	 	 
+	 <bean id="dao" class="com.cubead.clm.io.weixin.dao.GenericDao">
+	 	<property name="sessionFactory" ref="sessionFactory"/>
+	 </bean>
+	 
+	 <bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+	   <property name="dataSource" ref="dataSource"/>
+	   <property name="annotatedClasses">
+	       <list>
+	           <value>com.cubead.clm.io.weixin.data.ArticleDaily</value>
+	           <value>com.cubead.clm.io.weixin.data.ArticleTotal</value>
+	           <value>com.cubead.clm.io.weixin.data.CumulateUser</value>
+	           <value>com.cubead.clm.io.weixin.data.SemAccounts</value>
+	           <value>com.cubead.clm.io.weixin.data.UserInfo</value>	           	           	           	                               	           	           
+	       </list>
+	   </property>
+	   <property name="hibernateProperties">
+	      <props>
+	         <prop key="hibernate.show_sql">${showsql:false}</prop>
+	         <prop key="hibernate.dialect">${dialect:org.hibernate.dialect.PostgreSQL9Dialect}</prop>
+	         <prop key="hibernate.connection.release_mode">auto</prop>
+	         <prop key="hibernate.autoReconnect">true</prop>
+	         <prop key="hibernate.jdbc.batch_size">500</prop>
+	         <prop key="hibernate.bytecode.use_reflection_optimizer">true</prop>
+	         <prop key="hibernate.enable_lazy_load_no_trans">false</prop>
+	         <prop key="hibernate.cache.use_second_level_cache">false</prop>
+	         <prop key="hibernate.cache.use_query_cache">false</prop>                   	      	
+	      </props>
+	   </property>        
+ 	</bean>
+</beans>
