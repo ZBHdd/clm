@@ -1,0 +1,578 @@
+/api/file/download
+"fileId":29442
+1.Reporting Service
+url��/api/report/getReport
+����:getReport
+Req:
+{"header":{"username":"weichang_ydzx","password": "by2015ydzx","token": "340785bd-8aab-4101-a755-b4d47a704b1e"},"body":{"startDate": "2016-11-19","endDate": "2016-11-26","reportType":2}}
+
+Resp:
+{
+"header":?
+{
+"desc":?"success",
+"status":?0,
+"quota":?500000,
+"leftQuota":?499943
+}
+,
+"body":?
+{
+"taskId":?
+1152921504618050300,1152921504618050300
+"status":?"CREATED",
+"progress":?0,
+"success":?false
+}
+}
+
+������getTaskState
+url��/api/task/getTaskState
+req��
+{"header":{"username":"weichang_ydzx","password": "by2015ydzx","token": "340785bd-8aab-4101-a755-b4d47a704b1e"},"body":{"taskId":1152921504617904000}}
+
+resp��
+{
+"header": {
+"desc": "ִ��ʧ��",
+"status": 2,
+"quota": 500000,
+"leftQuota": 499934,
+"failures": [
+  {
+"code": 800,
+"message": "ϵͳ����"
+}
+],
+}
+}
+
+
+2.Account Service
+������getAccount ��ȡ�˻�״̬����Ϣ
+url�� /api/account/getAccount
+resp��
+{
+"header": {
+"desc": "ִ�гɹ�",
+"status": 0,
+"quota": 500000,
+"leftQuota": 499930
+},
+"body": {
+"accountInfoType": {
+"userId": 38642,
+"userName": "weichang_ydzx",
+"balance": 77309.71,
+"cost": 0,
+"payment": 0,
+"budgetType": 1,
+"budget": 20000,
+"regionTarget": [
+  "ɽ��",
+  "����",
+  "�ӱ�",
+  "����",
+  "����",
+  "����",
+  "����",
+  "����",
+  "����",
+  "������",
+  "���",
+  "����",
+  "����",
+  "�½�",
+  "����",
+  "����",
+  "����",
+  "����",
+  "�Ϻ�",
+  "ɽ��",
+  "����",
+  "����",
+  "�Ĵ�",
+  "�㽭",
+  "����",
+  "����",
+  "���ɹ�",
+  "����",
+  "�㶫",
+  "�ຣ",
+  "����"
+],
+"excludeIp": [],
+"openDomains": [
+  "https://lnk0.com",
+  "http://www.yidianzixun.com"
+],
+"regDomain": "http://www.yidianzixun.com,https://lnk0.com",
+"weeklyBudget": [
+  20000
+],
+"userStat": 100
+}
+}
+}
+
+
+3 CampaignService
+
+������getAllCampaign �����˻������еļƻ���Ϣ�����ȿ������ƣ����з��ŶӾ�����
+
+url��/api/campaign/getAllCampaign
+req��{"header":{"username":"weichang_ydzx","password": "by2015ydzx","token": "340785bd-8aab-4101-a755-b4d47a704b1e"}}
+resp��
+{
+"header": {
+"desc": "ִ�гɹ�",
+"status": 0,
+"quota": 500000,
+"leftQuota": 499921
+},
+"body": {
+"campaignTypes": [
+  {
+"campaignId": 22716131,
+"campaignName": "IOS-������",
+"budget": 1000,
+"regionTarget": [
+  "���е���"
+],
+"excludeIp": [],
+"negativeWords": [],
+"exactNegativeWords": [
+  "����˫11",
+  "�Ա�˫11",
+  "��è˫ʮһ",
+  "˫11",
+  "��è˫11",
+  "�Ա�˫ʮһ",
+  "����˫ʮһ",
+  "˫ʮһ"
+]}}}
+
+
+������getAllCampaignID
+url��/api/campaign/getAllCampaignID
+
+req��{"header":{"username":"weichang_ydzx","password": "by2015ydzx","token": "340785bd-8aab-4101-a755-b4d47a704b1e"}}
+resp��
+{
+"header": {
+"desc": "ִ�гɹ�",
+"status": 0,
+"quota": 500000,
+"leftQuota": 499920
+},
+"body": {
+"campaignIds": [
+  22716131,
+  22488494,
+  22577555,
+  22577554,
+������
+
+  21365572
+],
+}
+}
+
+
+4 AdgroupService
+������getAllAdgroupId ��ȡ�˻��ڵ�ȫ����Ԫ ID
+url��/api/adgroup/getAllAdgroupId
+req��
+res��
+{
+"header": {
+"desc": "ִ�гɹ�",
+"status": 0,
+"quota": 500000,
+"leftQuota": 499919
+},
+"body": {
+"campaignAdgroupIds": [
+  {
+"campaignId": 21365572,
+"adgroupIds": [
+  104458955,
+  104458956,
+  104458957,
+  104458958,
+  104458959,
+  104458960,
+  104458961,
+  104458962,
+  104458963,
+  104458964,
+  104458965,
+  104458966,
+  104458967,
+  104458968,
+  104458969,
+  104458970,
+  104458971,
+  104458972,
+  104458973,
+  104458974,
+  104458975,
+  104458976,
+  104458977,
+  104458978,
+  104458979,
+  104458980,
+  104458981,
+  104458982,
+  104458983,
+  104458984,
+  104458985,
+  104458986,
+  104458987,
+  104458988,
+  104458989,
+  104458990,
+  104458991,
+  104458992,
+  104458993,
+  104458994,
+  104458995,
+  104458996,
+  104458997,
+  104458998,
+  104458999,
+  104459000,
+  104476001,
+  104476002,
+  104476003,
+  104476004,
+  104476005,
+  104476006,
+  104476007,
+  104476008,
+  104476009,
+  104476010,
+  104476011,
+  104476012,
+  104476013,
+  104476014
+],
+},
+  {
+"campaignId": 22589274,
+"adgroupIds": [
+  174174333,
+  174174334,
+  174174335,
+  174174336,
+  174174337,
+  174174338,
+  174174339,
+  174174340,
+  174174341,
+  174174342,
+  174174343,
+  174174344
+],
+},
+  {
+"campaignId": 22074964,
+"adgroupIds": [
+  149281558,
+  149281559,
+  149281560,
+  149281561,
+  149281562,
+  149281563,
+  149281564,
+  149281565,
+  149281566,
+  149281567,
+  149281568,
+  149281569,
+  149281570,
+  149281571,
+  149281572,
+  149281573,
+  149281574,
+  149281575
+],
+},
+  {
+"campaignId": 22496211,
+"adgroupIds": [
+  167726318,
+  167726319,
+  167726320,
+  167726321,
+  167726322,
+  167726323,
+  167726324,
+  167726325,
+  167726326,
+  167726327,
+  167726328,
+  167726329,
+  167726330,
+  167726331,
+  167726332,
+  167726333,
+  167800427,
+  170045317,
+  170045318,
+  170045319,
+  170045320,
+  170045321,
+  170045322,
+  170045323,
+  170045324,
+  170045326,
+  179230293,
+  180738231,
+  181515045,
+  187604195
+],
+}}}
+
+������getAdgroupIdByCampaignId ����ָ���ļƻ� id ��ȡ�ƹ㵥Ԫ id
+url��/api/adgroup/getAdgroupIdByCampaignId
+req��
+{"header":{"username":"weichang_ydzx","password": "by2015ydzx","token": "340785bd-8aab-4101-a755-b4d47a704b1e"},"body":{"campaignIds":[27394,41392]}}
+
+resp��
+{
+"header": {
+"desc": "ִ�гɹ�",
+"status": 0,
+"quota": 500000,
+"leftQuota": 499918
+},
+"body": {
+"campaignAdgroupIds": [
+  {
+"campaignId": 21365572,
+"adgroupIds": [
+  104458955,
+  104458956,
+  104458957,
+  104458958,
+  104458959,
+  104458960,
+  104458961,
+  104458962,
+  104458963,
+  104458964,
+  104458965,
+  104458966,
+  104458967,
+  104458968,
+  104458969,
+  104458970,
+  104458971,
+  104458972,
+  104458973,
+  104458974,
+  104458975,
+  104458976,
+  104458977,
+  104458978,
+  104458979
+  ]}}}
+  
+  
+  5 KeywordService
+  
+ ������ getKeywordIdByAdgroupId ����ָ���ĵ�ԪId��ȡ�����йؼ���Id�б�����������
+������Ԫ��
+
+url��/api/keyword/getKeywordIdByAdgroupId
+  
+ req��
+{"header":{"username":"weichang_ydzx","password": "by2015ydzx","token": "340785bd-8aab-4101-a755-b4d47a704b1e"},"body":{"adgroupIds":[104458979]}}
+
+resp��
+{
+"header": {
+"desc": "ִ�гɹ�",
+"status": 0,
+"quota": 500000,
+"leftQuota": 499995
+},
+"body": {
+"groupKeywordIds": [
+  {
+"adgroupId": 104458979,
+"keywordIds": [
+  1314049378,
+  1314049379,
+  1314049380,
+  1314049381
+],
+}
+],
+}
+}
+
+������5.2.3 getKeywordByKeywordId     ����ָ���Ĺؼ���id��ȡ�ؼ��ʡ�
+url��/api/keyword/getKeywordByKeywordId
+
+req��
+{"header":{"username":"weichang_ydzx","password": "by2015ydzx","token": "340785bd-8aab-4101-a755-b4d47a704b1e"},"body":{"keywordIds":[1314049381]}}
+
+resp��
+{
+"header": {
+"desc": "ִ�гɹ�",
+"status": 0,
+"quota": 500000,
+"leftQuota": 499994
+},
+"body": {
+"keywordTypes": [
+  {
+"keywordId": 1314049381,
+"adgroupId": 104458979,
+"keyword": "����ţ�Ŷ���Ǯ",
+"price": 0.3,
+"destinationUrl": "http://www.yidianzixun.com/l/ucsemmeishi",
+"matchType": 1,
+"pause": true,
+"status": 0
+}
+],
+}
+}
+
+������5.2.8 getKeywordStatus     ����ָ����ȫ�˻����ƻ�id����Ԫid��ؼ���id����ȡ��Ӧ�Ĺؼ���״̬��ÿ��������಻����2W����¼�����������Ҳ��������ݡ�
+�����ַ��
+/api/keyword/getKeywordStatus
+
+req��
+{"header":{"username":"weichang_ydzx","password": "by2015ydzx","token": "340785bd-8aab-4101-a755-b4d47a704b1e"},"body":{"ids":[1314049381],"type":7}}
+
+resp��
+{
+"header": {
+"desc": "ִ�гɹ�",
+"status": 0,
+"quota": 500000,
+"leftQuota": 499992
+},
+"body": {
+"keywordStatus": [
+  {
+"id": 1314049381,
+"adgroupId": 104458979,
+"campaignId": 21365572,
+"status": 0
+}
+],
+}
+}
+
+������5.2.9 getKeyword10Quality       ����ָ�����˻����ƻ�id����Ԫid��ؼ���id����ȡ��Ӧ�Ĺؼ���ʮ�������ȡ�ÿ��������಻����2W����¼�����������Ҳ��������ݡ�
+�����ַ��
+/api/keyword/getKeyword10Quality
+
+req��
+{"header":{"username":"weichang_ydzx","password": "by2015ydzx","token": "340785bd-8aab-4101-a755-b4d47a704b1e"},"body":{"ids":[1314049381],"type":7}}
+
+
+resp��{
+"header": {
+"desc": "ִ�гɹ�",
+"status": 0,
+"quota": 500000,
+"leftQuota": 499991
+},
+"body": {
+"keyword10Quality": [
+  {
+"id": 1314049381,
+"adgroupId": 104458979,
+"campaignId": 21365572,
+"quality": 5
+}
+],
+}
+}
+
+9.Bulk Job Service
+
+������
+9.3.1 getAllObjects     getAllObjects �첽�����˻�����ָ���ƻ���Χ�ڵ��������ݡ�
+
+Service ��ַ��
+ /api/bulkJob/getAllObjects
+ 
+ req��
+ 
+ resp��
+  
+{
+"header": {
+"desc": "success",
+"status": 0,
+"quota": 500000,
+"leftQuota": 499990
+},
+"body": {
+"taskId": 1084844196,
+"status": "CREATED",
+"progress": 0,
+"success": false
+}
+}
+
+������
+9.3.2 getTaskState     getTaskState ������ API �첽�����ͨ��״̬��ѯ�ӿڡ�
+
+Service ��ַ��
+/api/task/getTaskState
+
+req��
+{"header":{"username":"weichang_ydzx","password": "by2015ydzx","token": "340785bd-8aab-4101-a755-b4d47a704b1e"},"body":{"taskId":1084823939}}
+
+resp��
+{
+"header": {
+"desc": "success",
+"status": 0,
+"quota": 500000,
+"leftQuota": 499989
+},
+"body": {
+"taskId": 1084823939,
+"userId": 38642,
+"status": "FINISHED",
+"progress": 1,
+"fileId": 1084844196,
+"createTime": "2017-06-06 09:35:04",
+"startTime": "2017-06-06 09:35:05",
+"completeTime": "2017-06-06 09:35:08",
+"success": true
+}
+}
+
+
+������
+9.3.3 download     download ����ͬ�������� API �ļ����ط����ͨ�÷�����
+Service ��ַ��
+/api/file/download
+
+req��
+
+
+resp��
+
+
+
+
+
+
+
+
+
+
+
+

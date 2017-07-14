@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+
+	<table-filter match-name="sem_accounts"></table-filter>
+	<table-filter match-name="cumulate_user"></table-filter>
+	<table-filter match-name="article_total"></table-filter>
+	<table-filter match-name="article_daily"></table-filter>
+	<table-filter match-name="user_info"></table-filter>
+</hibernate-reverse-engineering>

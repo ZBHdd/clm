@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: sogou.Testsogou
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec <<< FAILURE!
+sogou.Testsogou.testCsv()  Time elapsed: 0.003 sec  <<< FAILURE!
+java.lang.NullPointerException
+	at sogou.Testsogou.testCsv(Testsogou.java:29)
+
