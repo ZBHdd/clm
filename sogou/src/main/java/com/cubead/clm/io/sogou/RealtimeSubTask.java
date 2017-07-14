@@ -37,7 +37,7 @@ public class RealtimeSubTask implements ITask<String, Object, Object[]> {
 			data.process(JSON.toJSONString(new RealTimeServiceWrapper(new SogouAdServiceFactory(user.getString("name"), user.getString("password"), 
 					user.getString("token")).getWebService(RealTimeReportService.class)).getAccountReport(new GetAccountReportRequest(
 							new RealTimeReportRequest(hour))).getRealTimeReportResponse()), null, 
-							user.getString("tenant_id") + '|' + user.get("code") == null ? "code" : user.getString("code") + '|' + user.get("source") == null ? "source" : user.getString("source") + "|realTimeReport", time);
+							user.getString("tenant_id") + '|' + (user.get("client_code") == null ? "code" : user.getString("client_code")) + '|' + (user.get("utm_source") == null ? "source" : user.getString("utm_source")) + "|realTimeReport", time);
 		} catch (Exception e) {
 			e.printStackTrace();
 			logger.process(Task.getMessage(e), 10219, ((JsonObject)a).getJsonNumber("id").toString());
