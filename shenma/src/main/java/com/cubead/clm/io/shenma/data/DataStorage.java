@@ -47,7 +47,7 @@ import com.cubead.clm.io.shenma.data.report.PhoneReport;
 import com.cubead.clm.io.shenma.data.report.SearchWordReport;
 
 
-public class Report {
+public class DataStorage {
 	private final SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
 	private volatile int index = -1;
 	private volatile boolean finish = false;
@@ -97,7 +97,7 @@ public class Report {
 	private Boolean full;
 	private final String key;
 	
-	public Report( Boolean full, long update, long start, long timeout, int count, RedisTemplate<String, String> template, 
+	public DataStorage( Boolean full, long update, long start, long timeout, int count, RedisTemplate<String, String> template, 
 			Boolean partial, JsonObject account, IProcessor<Object, Boolean> data, IProcessor<Object, Boolean> logger,
 			HashMap<Type, UUID> uuids, String updateUrl, Result<AccountReport>[] accountReport, Result<AdgroupReport>[] adgroupReport,
 			Result<AdvanceAppReport>[] advanceAppReport, Result<AdvanceGoldensReport>[] advanceGoldReport,

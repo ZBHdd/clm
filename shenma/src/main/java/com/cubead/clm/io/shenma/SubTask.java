@@ -19,11 +19,11 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.data.redis.core.RedisTemplate;
 import com.cubead.clm.IProcessor;
 import com.cubead.clm.ITask;
-import com.cubead.clm.io.shenma.data.Report;
+import com.cubead.clm.io.shenma.data.DataStorage;
 import com.cubead.clm.io.shenma.data.Result;
-import com.cubead.clm.io.shenma.data.Report.ReportType;
-import com.cubead.clm.io.shenma.data.Report.Type;
-import com.cubead.clm.io.shenma.data.Report.UserinfoType;
+import com.cubead.clm.io.shenma.data.DataStorage.ReportType;
+import com.cubead.clm.io.shenma.data.DataStorage.Type;
+import com.cubead.clm.io.shenma.data.DataStorage.UserinfoType;
 
 public class SubTask implements ITask<String, Object, Object[]> {
 	protected static Random random = new Random(System.nanoTime());
@@ -168,7 +168,7 @@ public class SubTask implements ITask<String, Object, Object[]> {
 				int day = (int) ((today - update) / 86400000);
 				if (day > 0) {
 					int team = day % 5 == 0 ? day / 5 : day / 5 + 1;
-					Report report = new Report( full, today - 172799999L, update, timeout, count, template, account, ss, 
+					DataStorage report = new DataStorage( full, today - 172799999L, update, timeout, count, template, account, ss, 
 							data, logger, uuids,updateUrl, new Result[team], new Result[team], new Result[team], new Result[team],	
 							new Result[team], new Result[team], new Result[team], new Result[day > 90 ? 18 : team], 
 							new Result[team], new Result[team], new Result[team],	new Result[team], new Result[team], 

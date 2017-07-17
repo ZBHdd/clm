@@ -12,9 +12,9 @@ import javax.json.JsonValue;
 import javax.json.JsonValue.ValueType;
 
 import com.cubead.clm.IProcessor;
-import com.cubead.clm.io.shenma.data.Report;
-import com.cubead.clm.io.shenma.data.Report.UserInfo;
-import com.cubead.clm.io.shenma.data.Report.UserinfoType;
+import com.cubead.clm.io.shenma.data.DataStorage;
+import com.cubead.clm.io.shenma.data.DataStorage.UserInfo;
+import com.cubead.clm.io.shenma.data.DataStorage.UserinfoType;
 import com.cubead.clm.io.shenma.data.msg.Adgroups;
 import com.cubead.clm.io.shenma.data.msg.AdvancedApp;
 import com.cubead.clm.io.shenma.data.msg.AdvancedCssSublinks;
@@ -33,14 +33,14 @@ public class AccountJob implements Runnable{
 	private IProcessor<Object, Boolean> logger;
 	private final Integer interval;
 	private Count count;
-	private final Report report;
+	private final DataStorage report;
 	private IProcessor<Object, Boolean> stop;
 	private JsonObject semAccounts;
 	private final static String url="https://e.sm.cn/api/bulkJob/getAllObjects";
 
 	public AccountJob(IProcessor<Object, Boolean> executor,
 			IProcessor<Object, Boolean> logger, Integer interval, Count count,
-			Report report, IProcessor<Object, Boolean> stop,
+			DataStorage report, IProcessor<Object, Boolean> stop,
 			JsonObject semAccounts) {
 		this.executor = executor;
 		this.logger = logger;

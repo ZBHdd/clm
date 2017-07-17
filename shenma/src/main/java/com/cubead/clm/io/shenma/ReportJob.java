@@ -10,9 +10,9 @@ import javax.json.JsonValue.ValueType;
 
 import com.cubead.clm.IProcessor;
 
-import com.cubead.clm.io.shenma.data.Report;
+import com.cubead.clm.io.shenma.data.DataStorage;
 import com.cubead.clm.io.shenma.data.Result;
-import com.cubead.clm.io.shenma.data.Report.ReportType;
+import com.cubead.clm.io.shenma.data.DataStorage.ReportType;
 import com.cubead.clm.io.shenma.data.realTime.RealTimeAccountReport;
 import com.cubead.clm.io.shenma.data.report.AccountReport;
 import com.cubead.clm.io.shenma.data.report.AdgroupReport;
@@ -41,7 +41,7 @@ public class ReportJob implements Runnable{
 	private final Integer interval;
 	private final ReportType reportType;
 	private Count count;
-	private final Report report;
+	private final DataStorage report;
 	private final int team;
 	private IProcessor<Object, Boolean> stop;
 	private JsonObject semAccounts;
@@ -49,7 +49,7 @@ public class ReportJob implements Runnable{
 
 	public ReportJob(IProcessor<Object, Boolean> executor, String startTime,
 			String endTime, IProcessor<Object, Boolean> logger, Integer interval,
-			ReportType reportType, Count count, Report report, int team,
+			ReportType reportType, Count count, DataStorage report, int team,
 			IProcessor<Object, Boolean> stop, JsonObject semAccounts) {
 		this.executor = executor;
 		this.startTime = startTime;
