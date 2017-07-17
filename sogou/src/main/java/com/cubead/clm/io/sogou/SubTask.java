@@ -147,9 +147,7 @@ public class SubTask implements ITask<String, Object, Object[]> {
 						}
 					}
 					if (account == null) exec.process(new AccountJob(exec, logger, interval, new Count(retry), report, stop, ss), now + SubTask.random.nextInt(interval));
-				}else{
-					logger.process("没有数据可采");
-				}
+				}else logger.process("has been updated today.", 10299);
 			}
 			exec.start();
 		} catch (Exception e) {
