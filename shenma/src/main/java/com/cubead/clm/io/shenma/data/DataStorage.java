@@ -1257,7 +1257,7 @@ outter:		for (Type type : uuids.keySet()) if (type instanceof ReportType)
 						} catch (Exception e) {
 							logger.process(Task.getMessage(e), 10127, account.getString("tenant_id"));
 						} 
-					}
+					}else logger.process("Task finish successful without update", 9, account.getString("tenant_id"));
 				}
 			}
 		} else {
