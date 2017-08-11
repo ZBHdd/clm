@@ -96,7 +96,6 @@ public class AccountJob implements Runnable{
 						byte[] buf = new byte[8196];
 						ZipInputStream stream = new ZipInputStream(new ByteArrayInputStream(respbody));
 						ZipEntry entry = stream.getNextEntry();
-						entry.getSize();
 						UserInfo userInfo = report.new UserInfo(true);
 						while (entry != null) try {
 							if (entry.getName().indexOf(".csv") > -1) {
@@ -339,7 +338,8 @@ public class AccountJob implements Runnable{
 									break;
 								}
 							}
-						} catch (Exception e) {
+						} catch (IllegalArgumentException e){}
+						catch (Exception e) {
 							logger.process(Task.getMessage(e), 10105, semAccounts.getString("tenant_id"));
 						} finally {
 							entry = stream.getNextEntry();

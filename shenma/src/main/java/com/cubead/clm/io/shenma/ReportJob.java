@@ -68,7 +68,6 @@ public class ReportJob implements Runnable{
 	public void run() {
 		if (!stop.process(semAccounts.getString("tenant_id"), reportType, team)) try{
 			String msg = null;
-			
 			if(reportType.ordinal()>14){
 				msg = "{\"header\":{\"username\":\""+semAccounts.getString("name")+"\",\"password\": \""+semAccounts.getString("password")+"\",\"token\": \""+semAccounts.getString("token")+"\"},\"body\":{\"startDate\": \""+startTime+"\",\"endDate\": \""+endTime+"\",\"reportType\":"+type(reportType)+",\"unitOfTime\":7}}";
 			}else{

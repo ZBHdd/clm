@@ -48,7 +48,7 @@ import com.cubead.clm.io.shenma.data.report.SearchWordReport;
 
 
 public class DataStorage {
-	private final SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+	private final  SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
 	private volatile int index = -1;
 	private volatile boolean finish = false;
 	private volatile boolean cache = false;
@@ -1442,7 +1442,7 @@ outter:			for (Type type : uuids.keySet())
 		}
 	}
 	public  Long paseDate(String date) throws ParseException{
-		return formatter.parse(date.substring(0,10)).getTime()+Long.parseUnsignedLong(date.charAt(date.indexOf("时")-2)+""+date.charAt(date.indexOf("时")-1))*3600*1000;
+		return formatter.parse(date.substring(0,10)).getTime()+Long.parseLong(date.charAt(date.indexOf("时")-2)+""+date.charAt(date.indexOf("时")-1))*3600*1000;
 	}
 	public interface Type {
 		public String name();

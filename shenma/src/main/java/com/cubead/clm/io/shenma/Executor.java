@@ -9,10 +9,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.cubead.clm.IProcessor;
-import com.cubead.clm.io.service.Service;
 
 public class Executor implements IProcessor<Object, Boolean>{
-	private static final Logger log = LoggerFactory.getLogger(Service.class);
+	private static final Logger log = LoggerFactory.getLogger(Executor.class);
 	private PriorityBlockingQueue<Task> queue = new PriorityBlockingQueue<Task>();
 	private final ScheduledExecutorService executor;
 	private final Boolean self;

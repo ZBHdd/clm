@@ -35,8 +35,8 @@ public class ReportServiceExamples {
 		performanceData.add("position");
 		reportRequestType.setPerformanceData(performanceData);
 		reportRequestType.setReportType(5);
-		reportRequestType.setStartDate(new Date(sdf.parse("2017-01-11").getTime()));
-		reportRequestType.setEndDate(new Date(sdf.parse("2017-01-11").getTime()));
+		reportRequestType.setStartDate(new Date(sdf.parse("2017-07-11").getTime()));
+		reportRequestType.setEndDate(new Date(sdf.parse("2017-07-25").getTime()));
 		getReportIdRequest.setReportRequestType(reportRequestType);
 	
 		String url = ReportUtils.getReportDownloadURL(getReportIdRequest, 10);

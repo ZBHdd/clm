@@ -116,7 +116,6 @@ public class SubTask implements ITask<String, Object, Object[]> {
 			if (o != null) end = c.getTimeInMillis() - ((BigDecimal)o).longValue() * 86400000;
 			o = params.process("after");
 			if (o != null) start = c.getTimeInMillis() - ((BigDecimal)o).longValue() * 86400000;
-			Long today = end == null ? c.getTimeInMillis() + 86399999L : end + 86399999L;
 			Executor exec = new Executor(executor, thread);
 			exec.setClose(new IProcessor<Object, Object>(){
 				@Override
@@ -126,6 +125,7 @@ public class SubTask implements ITask<String, Object, Object[]> {
 				}	
 			});
 			for(JsonValue a : accounts){
+				Long today = end == null ? c.getTimeInMillis() + 86399999L : end + 86399999L;
 				JsonObject ss = (JsonObject) a;
 				logger.process("start task", 8, ss.getString("tenant_id"));
 				long update = start == null ? ss.get("update_time") == null || ss.getJsonNumber("update_time").longValue() == 0 ? today - 31449600000L : ss.getJsonNumber("update_time").longValue() + 86400000L : start;

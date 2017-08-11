@@ -1,13 +1,17 @@
 package com.cubead.clm.io.shenma;
 
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.math.BigDecimal;
+import java.nio.charset.Charset;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Map.Entry;
+import java.util.zip.GZIPInputStream;
 
 import javax.json.Json;
 import javax.json.JsonArrayBuilder;

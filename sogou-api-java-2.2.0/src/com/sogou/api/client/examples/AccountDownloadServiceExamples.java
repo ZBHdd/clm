@@ -1,10 +1,6 @@
 package com.sogou.api.client.examples;
 
-import java.io.IOException;
-
 import com.sogou.api.client.utils.AccountDownloadUtils;
-import com.sogou.api.client.utils.FileDownloadUtils;
-import com.sogou.api.client.utils.ZipUtils;
 import com.sogou.api.sem.v1.accountdownload.AccountFileType;
 import com.sogou.api.sem.v1.accountdownload.GetAccountFileRequest;
 
